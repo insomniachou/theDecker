@@ -3,12 +3,37 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "clean": "rm -rf ./public ./dist",
+    "start": "node ./dist/server.js",
+    "build": "npm run build:server & npm run build:client",
+    "build:server": "tsc -p ./src/server",
+    "build:client": "webpack --config webpack.prod.js",
+    "watch": "npm run watch:server & npm run watch:client & nodemon --inspect ./dist/server.js",
+    "watch:server": "tsc -p ./src/server --sourceMap --watch",
+    "watch:client": "webpack --config webpack.dev.js --watch"
   },
   "dependencies": {
-    "cookie-parser": "~1.4.4",
+    "cookie-parser": "^1.4.5",
     "debug": "~2.6.9",
     "express": "~4.16.1",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-react": "^7.9.4",
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.6",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^4.2.0",
+    "nodemon": "^2.0.3",
+    "ts-loader": "^6.2.2",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-merge": "^4.2.2"
   }
 }
