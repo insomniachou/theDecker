@@ -1,14 +1,14 @@
 import styles from "./styles.module.scss";
 
-export default function Hero() {
+export default function Hero({ name, title, linkedin, github }) {
   return (
     <div className={styles.hero}>
       <div className={styles.container}>
         <p>Hello, It's me</p>
-        <h1>Yu Zhou</h1>
-        <p>Software engineer | Photographer</p>
-        <a href="https://www.linkedin.com/in/yu-zhou-40372a136">Linkedin</a>
-        <a href="https://github.com/insomniachou">Github</a>
+        <h1>{name}</h1>
+        <p>{title}</p>
+        <a href={linkedin}>Linkedin</a>
+        <a href={github}>Github</a>
       </div>
     </div>
   );

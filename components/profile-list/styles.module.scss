@@ -1,0 +1,27 @@
+.profileList {
+  height: 96vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.picture {
+  margin: 20px;
+  flex-grow: 1;
+
+  img {
+    max-width: 200px;
+    margin: auto;
+    border-radius: 50%;
+    border: 2px solid #dedede;
+    background: #fff;
+    padding: 7px;
+    box-shadow: 0 7px 10px #999;
+  }
+}

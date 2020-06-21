@@ -1,4 +1,5 @@
-import Head, { Link } from "next/head";
+import Head from "next/head";
+// import Link from "next/link";
 
 import styles from "./styles.module.scss";
 
@@ -15,11 +16,19 @@ export default function Layout({ children, home }) {
           content="Yu Zhou and Ya Wang's personal website"
         />
       </Head>
-      <nav>
-        {home ? null : <Link href="/">Home</Link>}
-      </nav>
+      {/* <nav>
+        {home ? null : (
+          <Link href="/">
+            <a target="_blank" rel="noopener noreferrer">
+              Home
+            </a>
+          </Link>
+        )}
+      </nav> */}
       <main>{children}</main>
-      <footer className={styles.footer}>©2020 Yu Zhou and Ya Wang All Rights Reserved </footer>
+      <footer className={styles.footer}>
+        ©2020 Yu Zhou and Ya Wang All Rights Reserved{" "}
+      </footer>
     </div>
   );
 }
