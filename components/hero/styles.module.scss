@@ -1,0 +1,63 @@
+@import "../../styles/mixin";
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  color: #fff;
+  background-image: url(/images/hero-background.jpg);
+  background-size: cover;
+  background-position: center;
+
+  @include respond-to("medium") {
+    height: 500px;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+
+  p {
+    font-size: 18px;
+    margin: 10px auto;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-size: 60px;
+    letter-spacing: 2px;
+    margin: 0;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    padding: 8px 30px;
+  }
+
+  a {
+    display: inline-block;
+    width: 150px;
+    text-align: center;
+    padding: 8px;
+    margin: 10px;
+    font-size: 14px;
+    color: #fff;
+    border: 1px solid #fff;;
+  }
+}
+
+.container {
+  position: absolute;
+  width: 100%;
+  max-width: 480px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 15px;
+}
