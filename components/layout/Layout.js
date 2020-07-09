@@ -1,11 +1,21 @@
 import Head from "next/head";
 // import Link from "next/link";
+import { useEffect } from "react";
+import { initGA, logPageView } from "../../utils/analytics";
 
 import styles from "./styles.module.scss";
 
 const SITE_TITLE = "The Decker | Yu & Ya's personal website";
 
 export default function Layout({ children, home }) {
+  useEffect(() => {
+    if (!window.GA_INITIALIZED) {
+      initGA();
+      window.GA_INITIALIZED = true;
+    }
+    logPageView();
+  }, [])
+
   return (
     <div className={styles.container}>
       <Head>
