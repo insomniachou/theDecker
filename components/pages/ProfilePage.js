@@ -6,15 +6,14 @@ export default function ProfilePage({ profileInfo }) {
   const {
     name,
     title,
-    linkedin,
-    github,
     picture,
     email,
     phone,
     website,
     greetings,
+    links,
   } = profileInfo;
-  const heroProps = { name, title, linkedin, github };
+  const heroProps = { name, title, links };
   const aboutMeProps = { picture, name, email, phone, website, greetings };
 
   return (
