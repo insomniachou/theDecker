@@ -36,10 +36,15 @@ export default function ColorMatrix() {
     return null;
   }
 
+  const width = Math.min(window.innerHeight, window.innerWidth);
+  const maxtrixStyle = {
+    height: width,
+    width,
+  };
+
   return (
     <div className={styles.container}>
-      <div className={styles.dummy} />
-      <div className={styles.matrixContainer}>
+      <div className={styles.matrixContainer} style={maxtrixStyle}>
         {matrix.map((row, rowIndex) => {
           return (
             <div key={`row-${rowIndex}`} className={styles.row}>

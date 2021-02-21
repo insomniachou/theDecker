@@ -20,7 +20,7 @@ export const YU_PROFILE_INFO = {
     },
     {
       name: "Game",
-      url: "/yu/findIt",
+      url: "/yu/game",
     },
     {
       name: "Gallery",
