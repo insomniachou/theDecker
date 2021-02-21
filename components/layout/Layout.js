@@ -14,7 +14,7 @@ export default function Layout({ children, home }) {
       window.GA_INITIALIZED = true;
     }
     logPageView();
-  }, [])
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -37,7 +37,7 @@ export default function Layout({ children, home }) {
       </nav> */}
       <main>{children}</main>
       <footer className={styles.footer}>
-        ©2020 Yu Zhou and Ya Wang All Rights Reserved{" "}
+        ©{new Date().getFullYear()} Yu Zhou and Ya Wang All Rights Reserved{" "}
       </footer>
     </div>
   );

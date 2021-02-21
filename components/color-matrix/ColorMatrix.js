@@ -2,8 +2,6 @@ import { useState, useCallback, useMemo, useEffect } from "react";
 
 import styles from "./styles.module.scss";
 
-const COLOR_DIFF = 20;
-
 export default function ColorMatrix() {
   const [isClient, setIsClient] = useState(false);
   const [currentSize, setSize] = useState(2);
